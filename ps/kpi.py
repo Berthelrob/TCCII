@@ -7,9 +7,11 @@ class Kpi:
         self.qnt_historicos = qnt_historicos
         self.qnt_kpi = qnt_kpi
         self.kpi_nao_tratado = []
+        self.kpi_tratado = []
     pass
 
     def trata_historico(self):  
+        print("Entrou no trata_historico")
         w = 0.25
         divisor = 0.0
         dividendo = 0.0
@@ -18,9 +20,9 @@ class Kpi:
                 divisor = self.kpi_nao_tratado[j]*(w*j+1) + divisor
                 dividendo = (w*j+1) + dividendo
             self.kpi_tratado = self.kpi_tratado + divisor/dividendo
-        return self.kpi_tratado
         
     def gerar_dados_kpi(self):
+        print("Entrou no gerar_dados_kpi")
         for identificador in range(self.qnt_kpi):
             kpi_historico = []
             for historico in range(self.qnt_historicos):
