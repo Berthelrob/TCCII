@@ -8,7 +8,7 @@ from pn.geradadospn import Geradadospn
 if __name__== "__main__":
 
     print("-------------Trabalho de TCC 2 - Analisador de risco utilizando AHP/ANP---------------\n")
-    print("------------------------Desenvolvido por Robson Berthelsen----------------------------\n")
+    print("------------------------Desenvolvido por sRobson Berthelsen----------------------------\n")
     print("-------------------------------Data:19/09/2021----------------------------------------\n")
 
     qnt_ps = 3
@@ -24,5 +24,5 @@ if __name__== "__main__":
     #for i in range(qnt_ps):
     #    ps.append(Geradadospn(i,qnt_ps))
     ps1 = Geradadospn(1,qnt_ps)
-    ps1.
+    ps1.gerar_dados_kpi()
     #Fazer count para saber quantos PS's possuem a mesma habilidade. Se count <=1, então é impossível de formar uma OV. Caso contrário, executar AHP
