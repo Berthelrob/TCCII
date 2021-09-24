@@ -8,14 +8,26 @@ class Geradadosps:
         self.habilidade = random.randint(1,qnt_ps/3)
         self.qnt_kpi = 4
         self.qnt_historico = 10
-        self.kpi_tratado = []
-    pass
+        pass
 
-    def kpis_do_ps(self):
-        kpi = Kpi(self.qnt_kpi, self.qnt_historico)
-        kpi.inicia_e_trata_historico()
+    def gerar_dados_kpi(self):
+        kpi = Kpi()
+        w = 0.25
+        divisor = 0.0
+        dividendo = 0.0
 
-    ##Gerar 4 vezes dados KPI's
-    #Criar metodo para pegar e atribuir valor gerado pelo gerar_dados_kpi e incluir em variável local na classe geradadosps
+        print("Entrou no gerar_dados_kpi")
+        for identificador in range(self.qnt_kpi):
+            kpi_historico = []
+            for historico in range(self.qnt_historicos):
+                kpi_historico.append(round(random.random(),2))
+            kpi.kpi_nao_tratado = kpi.kpi_nao_tratado + kpi_historico
+
+        for i in range(self.qnt_kpi):
+            for j in range(self.qnt_historicos):
+                divisor = kpi.kpi_nao_tratado[j]*(w*j+1) + divisor
+                dividendo = (w*j+1) + dividendo
+            kpi.kpi_tratado = kpi.kpi_tratado + divisor/dividendo
+        
 
 
